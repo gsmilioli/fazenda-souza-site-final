@@ -125,8 +125,7 @@
 
     /* --- BACKGROUND --- */
     .hero {
-      /* Usando a imagem da Vista Aérea como fundo */
-      background: linear-gradient(rgba(74, 44, 42, 0.85), rgba(56, 92, 79, 0.8)), url('Vista Aérea de Fazenda Souza.png');
+      background: linear-gradient(rgba(74, 44, 42, 0.85), rgba(56, 92, 79, 0.8));
       background-size: cover;
       background-position: center;
       background-color: #4A2C2A; /* Fallback */
@@ -319,12 +318,18 @@
 /* Padronização de imagens */
 .page-section figure img {
     width: 100%;
-    max-width: 550px;
-    max-height: 350px;
+    max-width: 450px;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.page-section figure img {
+    max-height: 350px;
 }
 
 </style>
