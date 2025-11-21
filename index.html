@@ -1,700 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fazenda Souza – Patrimônio e Inclusão Digital</title>
-  <meta name="description" content="Projeto de Extensão: Website Comunitário e Inclusão Digital em Fazenda Souza.">
-  <style>
-    /* --- VARIÁVEIS VISUAIS --- */
-    :root {
-      --primary-color: #4A2C2A; 
-      --secondary-color: #385c4f;
-      --accent-color: #D4A373;
-      --bg-color: #faf7f5;
-      --text-color: #2c2c2c;
-      --white: #ffffff;
-      --gray-light: #e0e0e0;
-      --shadow: 0 4px 6px rgba(0,0,0,0.1);
-      --radius: 8px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fazenda Souza – Patrimônio e Inclusão Digital</title>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+:root {
+  --primary-color: #4A2C2A;
+  --secondary-color: #385c4f;
+  --accent-color: #D4A373;
+  --bg-color: #faf7f5;
+  --text-color: #2c2c2c;
+  --white: #ffffff;
+  --gray-light: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+  --radius: 8px;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.8;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+/* GLOBAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  line-height: 1.8;
+}
 
-    a { text-decoration: none; color: inherit; transition: 0.3s; }
-    ul { list-style: none; }
-    
-    /* Estilo global para imagens */
-    img { 
-      max-width: 100%; 
-      height: auto; 
-      display: block; 
-      border-radius: var(--radius); 
-    }
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
 
-    /* Estilos específicos para legendas e figuras */
-    figure {
-      margin: 25px 0;
-      text-align: center;
-      background: rgba(255,255,255,0.5);
-      padding: 10px;
-      border-radius: var(--radius);
-      border: 1px solid #e0e0e0;
-    }
+figure img {
+  object-fit: contain !important; /* NÃO corta mais imagens */
+  max-height: 420px;
+  width: auto;
+  margin: 0 auto;
+  background: #eee;
+}
 
-    figure img {
-      margin: 0 auto;
-      box-shadow: var(--shadow);
-      /* Um fundo cinza claro caso a imagem ainda não tenha sido carregada */
-      background-color: #eaeaea; 
-      min-height: 200px; 
-      object-fit: cover;
-    }
-    
-    /* PADRONIZAÇÃO DE IMAGENS CONFORME SOLICITADO */
-    .page-section figure img {
-      width: 100%;
-      max-width: 450px;
-      max-height: 350px; /* Seu limite de altura */
-      height: auto;
-      object-fit: cover; /* Usado 'cover' para preencher a área e manter proporção */
-      display: block;
-      margin: 0 auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    /* FIM DA PADRONIZAÇÃO */
+/* HERO SEM IMAGEM DE FUNDO */
+.hero {
+  background: linear-gradient(#4A2C2A, #385c4f);
+  padding: 70px 20px;
+  text-align: center;
+  color: white;
+  border-bottom: 4px solid var(--accent-color);
+}
 
-    figcaption {
-      font-size: 0.95rem;
-      color: #444;
-      margin-top: 10px;
-      font-weight: 600;
-      line-height: 1.3;
-    }
+.hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+.hero p { font-size: 1.2rem; opacity: .95; }
 
-    .source-ref {
-      display: block;
-      font-size: 0.75rem;
-      color: #777;
-      font-weight: normal;
-      margin-top: 4px;
-      font-style: italic;
-    }
+/* Removido o background da hero:
+background: linear-gradient(rgba(74,44,42,0.85), rgba(56,92,79,0.8)), url('Vista Aérea de Fazenda Souza.png'); */
 
-    /* --- CABEÇALHO --- */
-    header {
-      background-color: var(--primary-color);
-      color: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
+/* AJUSTE ESPECIAL PARA AS IMAGENS CORTADAS */
+figure img[src*="Capela"],
+figure img[src*="capela"],
+figure img[src*="Matriz"],
+figure img[src*="Paróquia"],
+figure img[src*="Igreja"],
+figure img[src*="Nossa Senhora da Saúde"] {
+  object-fit: contain !important; /* evita corte total */
+  width: 100%;
+  max-height: 430px;
+}
 
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Sections */
+.page-section { padding: 20px; max-width: 1000px; margin: auto; }
+.page-section h2 { color: var(--primary-color); border-left: 6px solid var(--accent-color); padding-left: 10px; margin-bottom: 20px; }
 
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+/* Cards */
+.card-grid { display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--secondary-color);
+}
 
-    /* MENU DE NAVEGAÇÃO */
-    .nav-menu { display: flex; gap: 15px; }
+/* Navegação */
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+.nav-link { cursor: pointer; padding: 6px 10px; color: white; display: inline-block; }
+.nav-link:hover, .nav-link.active { background: var(--accent-color); color: var(--primary-color); }
 
-    .nav-link {
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-    }
-
-    .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
-
-    /* --- BACKGROUND --- */
-    .hero {
-      /* Usando a imagem da Vista Aérea como fundo */
-      background: linear-gradient(rgba(74, 44, 42, 0.85), rgba(56, 92, 79, 0.8)), url('Vista Aérea de Fazenda Souza.png');
-      background-size: cover;
-      background-position: center;
-      background-color: #4A2C2A; /* Fallback */
-      color: var(--white);
-      text-align: center;
-      padding: 80px 20px;
-      margin-bottom: 40px;
-    }
-
-    .hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-    .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.95; }
-
-    .btn-cta {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      padding: 12px 30px;
-      font-weight: bold;
-      border-radius: 50px;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      display: inline-block;
-      cursor: pointer;
-      border: 2px solid var(--accent-color);
-    }
-
-    .btn-cta:hover {
-      background-color: transparent;
-      color: var(--white);
-      border-color: var(--white);
-    }
-
-    /* --- CONTEÚDO PRINCIPAL --- */
-    main { max-width: 1000px; margin: 0 auto; padding: 0 20px 60px; flex: 1; }
-
-    .page-section { display: none; animation: fadeIn 0.6s ease; }
-    .page-section.active { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h2 {
-      color: var(--primary-color);
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-      border-bottom: 3px solid var(--accent-color);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    h3 { color: var(--secondary-color); font-size: 1.6rem; margin: 35px 0 15px; }
-    
-    p { 
-      margin-bottom: 20px; 
-      text-align: justify; 
-      font-size: 1.05rem; 
-      text-indent: 2.5em; /* Recuo ABNT para parágrafos */
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin: 30px 0;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 25px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border-left: 6px solid var(--secondary-color);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card:hover { transform: translateY(-5px); }
-
-    /* Sobrescreve o estilo do parágrafo dentro dos cards */
-    .card p {
-      text-align: center; /* Centraliza o texto das cards */
-      text-indent: 0; /* Remove o recuo ABNT dentro das cards */
-    }
-    
-    /* Ajuste de imagem dentro do card */
-    .card figure {
-      margin: 15px -10px; /* Estica um pouco a imagem dentro do card */
-      background: none;
-      border: none;
-    }
-
-    .styled-list { list-style: none; margin-bottom: 20px; }
-    .styled-list li { position: relative; padding-left: 30px; margin-bottom: 12px; }
-    .styled-list li::before {
-      content: "✦";
-      color: var(--accent-color);
-      font-size: 1.2rem;
-      position: absolute;
-      left: 0;
-      top: 2px;
-    }
-
-    .citation {
-      font-size: 0.8rem;
-      color: #666;
-      display: block;
-      margin-top: 5px;
-      font-style: italic;
-      text-align: right;
-      text-indent: 0; /* Garante que a citação não tenha recuo */
-    }
-
-    .contact-info {
-      background: var(--white);
-      padding: 40px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      border-top: 5px solid var(--primary-color);
-    }
-    
-    /* Remove o recuo ABNT de itens de contato e parágrafos de introdução na seção de contato */
-    .contact-info p { text-indent: 0; }
-    .contact-item { margin-bottom: 15px; font-size: 1.1rem; }
-    
-    /* AJUSTE CSS PARA O FORMULÁRIO DO GOOGLE COM ALTURA GRANDE */
-    .google-form-container { 
-        position: relative; 
-        /* Altura fixa ajustada para a altura do iframe (3475px) mais uma margem */
-        height: 3500px; 
-        overflow: hidden; /* Mantém o iframe contido */
-        padding-top: 0; /* Remove o padding que causava proporção 1:1 */
-    }
-    .google-form-container iframe { 
-        width: 100%; 
-        height: 100%; /* Ocupa a altura definida acima */
-        border: 0; 
-        display: block; /* Garante que o iframe seja um bloco padrão */
-        position: static; /* Remove a posição absoluta que causava problemas */
-    }
-
-    /* --- RODAPÉ --- */
-    footer {
-      background-color: var(--primary-color);
-      color: var(--gray-light);
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: auto;
-      font-size: 0.9rem;
-    }
-    
-    footer p {
-        text-align: center;
-        margin-bottom: 10px;
-        text-indent: 0; /* Garante que o rodapé não tenha recuo */
-    }
-
-    .footer-ref {
-        font-size: 0.7rem; /* Fonte menor para as referências */
-        opacity: 0.8;
-        max-width: 800px;
-        margin: 10px auto;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 10px;
-        text-align: left; /* Alinha as referências à esquerda para melhor leitura */
-    }
-    
-    .footer-ref p {
-        text-align: left;
-        margin-bottom: 8px;
-    }
-    
-    .footer-ref h4 {
-        color: var(--white);
-        font-size: 0.9rem;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .footer-links { margin-top: 20px; }
-    .footer-links a { margin: 0 10px; color: var(--accent-color); cursor: pointer; }
-    .footer-links a:hover { text-decoration: underline; }
-
-    /* --- RESPONSIVIDADE --- */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .menu-toggle { display: block; }
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      }
-      .nav-menu.show { display: flex; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <center><div class="logo">FAZENDA SOUZA DIGITAL</div></center>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <center><li class="nav-link active" onclick="showPage('home')">Início</li></center>
-          <center><li class="nav-link" onclick="showPage('historia')">História</li></center>
-          <center><li class="nav-link" onclick="showPage('capelinhas')">Capelinhas</li></center>
-          <center><li class="nav-link" onclick="showPage('curiosidades')">Curiosidades</li></center>
-          <center><li class="nav-link" onclick="showPage('inclusao')">Inclusão Digital</li></center>
-          <center><li class="nav-link" onclick="showPage('contato')">Eventos e Contato</li></center>
-          <center><li class="nav-link" onclick="showPage('avaliacao')" style="background-color:var(--accent-color); color:var(--primary-color); font-weight:bold;">Avalie o Site</li></center>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <h1 class="logo">FAZENDA SOUZA DIGITAL</h1>
+  <nav>
+    <span class="nav-link active" onclick="showPage('home')">Início</span>
+    <span class="nav-link" onclick="showPage('historia')">História</span>
+    <span class="nav-link" onclick="showPage('capelinhas')">Capelinhas</span>
+    <span class="nav-link" onclick="showPage('curiosidades')">Curiosidades</span>
+    <span class="nav-link" onclick="showPage('inclusao')">Inclusão Digital</span>
+    <span class="nav-link" onclick="showPage('contato')">Contato</span>
+  </nav>
+</header>
 
-  <section id="home" class="page-section active">
-    <div class="hero">
-      <h1><center>Bem-vindo a Fazenda Souza</center></h1>
-      <p style="text-indent: 0;"><center>Conectando Patrimônio Cultural, Fé e Inclusão Digital nas tradições de nossa terra.</center></p>
-      <div class="btn-cta" onclick="showPage('historia')">Conheça Nossa História</div>
-    </div>
+<section id="home" class="page-section active">
+  <div class="hero">
+    <h1>Bem‑vindo a Fazenda Souza</h1>
+    <p>Conectando Patrimônio Cultural, Fé e Inclusão Digital.</p>
+  </div>
+</section>
 
-    <main>
-      <div class="card-grid">
-        <div class="card">
-          <h3><center>🌾 História, Cultura e Raízes</center></h3>
-          <p>Descubra como a chegada dos imigrantes italianos em 1880 moldaram a identidade agrícola e cultural de nosso distrito. Uma viagem pela história e origens de Fazenda Souza.</p>
-          <center><span class="btn-cta" onclick="showPage('historia')" style="font-size:0.8rem;">Ler Mais</span></center>
-        </div>
-        <div class="card">
-          <h3><center>⛪ Capelinhas Peregrinas</center></h3>
-          <p>A tradição das capelinhas que visitam os lares agora aliada à tecnologia: QR Codes que conectam a comunidade a um acervo digital de informações, mantendo a fé viva e atualizada.</p>
-          <center><span class="btn-cta" onclick="showPage('capelinhas')" style="font-size:0.8rem;">Ver Tradição</span></center>
-        </div>
-        <div class="card">
-          <h3><center>💡 Curiosidades Locais</center></h3>
-          <p>Conheça o patrimônio histórico, o toque do sino da Matriz, a história do Clube Minuano e outros lugares que guardam a memória afetiva e a identidade do nosso povo.</p>
-          <center><span class="btn-cta" onclick="showPage('curiosidades')" style="font-size:0.8rem;">Explorar</span></center>
-        </div>
-      </div>
-      
-      <div style="text-align:center; margin-top:40px; background:#e8f4f8; padding:20px; border-radius:8px;">
-        <h3><center>Projeto de Extensão Universitária</center></h3>
-        <p style="text-indent: 0;"><center>Este portal é fruto do trabalho acadêmico do curso de Engenharia da Computação do Centro Universitário Internacional UNINTER, desenvolvido com o objetivo de aplicar tecnologia na valorização da cultura local e promover a inclusão digital por meio das tradições religiosas.
-<br>
-O site foi elaborado como parte do projeto de Atividade Extensionista, buscando preservar o patrimônio imaterial, fortalecer os laços comunitários e fomentar a inclusão digital. A iniciativa concentra-se em Fazenda Souza, um distrito rural do Município de Caxias do Sul, no estado do Rio Grande do Sul, Brasil, reconhecido por sua rica herança cultural e tradições mantidas pela comunidade local.</center></p>
-        <center><small>Autor: Gabriel Scopel Milioli (RU 4062130) - Centro Universitário Internacional UNINTER</small></center>
-      </div>
-    </main>
-  </section>
-
-  <section id="historia" class="page-section">
-    <main>
-      <h2>História de Fazenda Souza</h2>
-      
-      <figure>
-        <img src="Vista Aérea de Fazenda Souza.png" alt="Vista aérea do distrito de Fazenda Souza">
-        <figcaption>
-          Vista aérea do distrito de Fazenda Souza
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-        </figcaption>
-      </figure>
-
-      <h3><center>Das Origens em "Pouso Alto" aos Dias Atuais</center></h3>
-      <p>A história de Fazenda Souza remonta a um território vasto que inicialmente pertencia a Santo Antônio da Patrulha, município mãe de diversas localidades gaúchas. Em 1876, a região tornou-se o que seria o 7º distrito de São Francisco de Paula, desmembrado de Santo Antônio. Conforme estudos históricos, o primeiro proprietário dessas terras chamava-se <strong>Ignácio de Sousa Corrêa</strong>. Originalmente, a localidade era conhecida como "Pouso Alto", um ponto de parada estratégico. O nome atual, "Fazenda Souza", consolidou-se naturalmente porque os tropeiros que passavam pela região para o comércio de gado reconheciam o local pelo sobrenome do proprietário das terras.</p>
-
-      <p>A ocupação efetiva e a formação da identidade cultural que conhecemos hoje começaram por volta de **1880**, com a chegada dos primeiros imigrantes italianos. Um segundo grupo significativo chegou em 1895. Essas famílias, vindas majoritariamente de Feltre (Itália), trouxeram consigo a força de trabalho e a fé católica. Elas desenvolveram atividades fundamentais para a economia local incipiente: a agricultura de subsistência, a criação de animais e a exploração da madeira, abundante na região das araucárias. Esse legado transformou a paisagem e a cultura local, caracterizada hoje pela forte produção de hortifrutigranjeiros e pela religiosidade presente em cada esquina.</p>
-
-      <h3><center>Educação e Desenvolvimento Comunitário</center></h3>
-      
-      <div class="card-grid">
-        <figure style="background: transparent; border: none; margin: 0;">
-          <img src="Escola Padre João Schiavo.png" alt="Escola Municipal de Ensino Fundamental Padre João Schiavo">
-          <figcaption>
-             Escola Municipal de Ensino Fundamental Padre João Schiavo
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-          </figcaption>
-        </figure>
-
-        <figure style="background: transparent; border: none; margin: 0;">
-          <img src="Escola Antônio Avelino Boff.png" alt="Escola Estadual de Ensino Médio Antônio Avelino Boff">
-          <figcaption>
-             Escola Estadual de Ensino Médio Antônio Avelino Boff
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <p>O distrito cresceu em torno de suas instituições sociais e religiosas. A educação sempre foi um pilar central para a comunidade. A **Escola Municipal Padre João Schiavo**, que antigamente se chamava Colégio Santa Maria Goretti (fundado em 1957 e administrado pelas irmãs Murialdinas), e a **Escola Estadual de Ensino Médio Antônio Avelino Boff** são marcos desse desenvolvimento. Elas não apenas educam, mas preservam a história através de projetos pedagógicos que valorizam o patrimônio local e a identidade dos descendentes.</p>
-
-      <p>Atualmente, Fazenda Souza possui cerca de 2.320 habitantes residindo em uma área total de 7.378 hectares, o que representa aproximadamente 5,9% da área rural do município de Caxias do Sul. A comunidade mantém viva a herança de um passado de trabalho árduo e fé inabalável, equilibrando a tradição rural com as necessidades de modernização.
-      <span class="citation">[Fonte: ANDREOLLA, 2019.]</span></p>
-    </main>
-  </section>
-
-  <section id="capelinhas" class="page-section">
-    <main>
-      <h2>Capelinhas & Tradições</h2>
-      
-      <p>As capelinhas domiciliárias de Nossa Senhora (ou "santinhas") representam a manifestação mais profunda e duradoura do catolicismo popular em Fazenda Souza. São pequenos oratórios de madeira, contendo a imagem da Virgem Maria, que percorrem as casas da comunidade em um sistema de rodízio, permanecendo cerca de 24 horas em cada lar. Este costume cria uma rede invisível de união entre vizinhos e famílias.</p>
-
-      <figure>
-        <img src="Capelinha de Nossa Senhora antiga.jpg" alt="Capelinha de Nossa Senhora antiga">
-        <figcaption>
-          Capelinha de Nossa Senhora antiga
-          <span class="source-ref">Fonte: MILIOLI, 2022.</span>
-        </figcaption>
-      </figure>
-
-      <h3><center>Origem e Significado na Comunidade</center></h3>
-      <p>Os registros históricos do Livro Tombo da Paróquia Nossa Senhora da Saúde indicam a presença oficial desta tradição desde 1960, data de fundação da paróquia e inauguração da Igreja Matriz. No entanto, relatos orais e a expressão "como de costume" nos documentos antigos sugerem que a prática já existia muito antes, trazida pelos imigrantes. A capelinha funciona como um elo comunitário vital: ao receber a visita, a família coloca a imagem em um lugar de honra na sala, muitas vezes acendendo uma vela e realizando preces, momentos que frequentemente são compartilhados com vizinhos e parentes.</p>
-
-      <figure>
-        <img src="Livro Tombo da Paróquia.png" alt="Trecho do Livro Tombo">
-        <figcaption>
-          Trecho do Livro Tombo que registra pela primeira vez a atividade das capelinhas em Fazenda Souza
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-        </figcaption>
-      </figure>
-
-      <p>Além do aspecto devocional, as capelinhas historicamente atuam como "mensageiras". Antigamente, bilhetes e pequenas notas fixadas no exterior da capelinha avisavam sobre horários de missas, festas de padroeiros e falecimentos na comunidade. Hoje, elas continuam a tecer a rede social do distrito, fortalecendo a solidariedade, a identidade local e o senso de pertencimento.</p>
-
-      <div class="card" style="background-color: #fff8f0; border-left-color: var(--accent-color);">
-        <h3><center>📱 A Capelinha como Ponte Digital</center></h3>
-        <p>Como parte deste projeto de extensão e atendendo à necessidade de atualização tecnológica apontada na fase de levantamento e análise, propõe-se o uso das capelinhas como instrumento de **Inclusão Digital**. A fixação de **QR Codes** e URLs na estrutura das capelinhas permitirá que as famílias acessem instantaneamente este site comunitário pelo celular. Assim, a tradição se mantém como mensageira, mas agora conectando os fiéis a conteúdo online, notícias da paróquia e grupos de avisos, substituindo os antigos bilhetes de papel por informação digital atualizada.</p>
-        <span class="citation">[Fonte: MILIOLI, 2022.]</span>
-      </div>
-    </main>
-  </section>
-
-  <section id="curiosidades" class="page-section">
-    <main>
-      <h2>Curiosidades & Patrimônio Cultural</h2>
-      <p>Fazenda Souza guarda saberes imateriais e lugares físicos que definem a alma de seu povo. O Inventário Participativo de Patrimônio Cultural (IPPC) revelou bens únicos que merecem ser preservados e conhecidos.</p>
-      
-      <figure>
-        <img src="Paróquia Nossa Senhora da Saúde.png" alt="Igreja Matriz Nossa Senhora da Saúde">
-        <figcaption>
-          Igreja Matriz Nossa Senhora da Saúde
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-        </figcaption>
-      </figure>
-
-      <div class="card-grid">          
-        <div class="card">
-          <h3><center>🔔 O Tocar do Sino</center></h3>
-          <p>Na torre da Igreja Matriz, o sino é a voz da comunidade. Existe um toque específico e alegre para chamar os fiéis para a missa e outro, pausado e solene, para anunciar o falecimento de um morador. A técnica passou a ser ensinada a novas gerações pelo pároco, mantendo vivo este importante meio de comunicação sonora.</p>
-        </div>
-
-        <div class="card">
-          <h3><center>⚽ Clube Minuano</center></h3>
-          <p>Fundado oficialmente em 1968 por lideranças como José Copetti e Antoninho Mazzochi, a **Associação Cultural e Esportiva Minuano** é o coração social do distrito. Começou com jogos de futebol em terrenos emprestados e hoje possui sede própria e campo. É o palco de grandes eventos, bailes e dos tradicionais "filós" (encontros com comida típica, vinho e jogos de cartas), representando a união e o lazer dos moradores.</p>
-        </div>
-
-        <div class="card">
-          <h3><center>🏛️ Seminário e Capelas</center></h3>
-          <p>O antigo Seminário dos Josefinos de Murialdo (inaugurado em 1941 e hoje Centro de Eventos) e a Capela Padre João Schiavo são locais de peregrinação. A capela abriga o túmulo do Beato João Schiavo, cuja obra missionária moldou a educação e a espiritualidade de Fazenda Souza. É um local de agradecimento e preces para devotos de toda a região.</p>
-        </div>
-      </div>
-      
-      <figure>
-        <img src="Esporte Clube Minuano.png" alt="Associação Cultural e Esportiva Minuano">
-        <figcaption>
-          Associação Cultural e Esportiva Minuano (Clube Minuano)
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-        </figcaption>
-      </figure>
-      
-      <div class="card-grid">
-        <figure style="background: transparent; border: none; margin: 0;">
-          <img src="Seminário Josefinos de Murialdo.png" alt="Seminário Josefinos de Murialdo">
-          <figcaption>
-            Centro de Eventos e Hospedagem Murialdo (antigo Seminário dos Josefinos de Murialdo)
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-          </figcaption>
-        </figure>
-
-        <figure style="background: transparent; border: none; margin: 0;">
-          <img src="Capela Beato João Schiavo.png" alt="Capela Padre João Schiavo">
-          <figcaption>
-            Capela Padre João Schiavo
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-          </figcaption>
-        </figure>
-      </div>
-      <span class="citation">[Fonte: ANDREOLLA, 2019.]</span>
-    </main>
-  </section>
-
-  <section id="inclusao" class="page-section">
-    <main>
-      <h2>Inclusão Digital e Social</h2>
-      <p>Este website não é apenas um repositório de informações; é uma ferramenta de transformação social baseada nos Objetivos de Desenvolvimento Sustentável (ODS) da ONU, especificamente o **ODS 11 (Cidades e Comunidades Sustentáveis)**.</p>
-
-      <h3><center>Do Projeto à Realidade</center></h3>
-      <p>Inicialmente, a proposta acadêmica visava incorporar tecnologias como velas eletrônicas às capelinhas. No entanto, em diálogo com as lideranças locais e o sacerdote responsável, percebeu-se que a comunidade valoriza a tradição original dos artefatos devocionais. A proposta da vela eletrônica foi rejeitada por alterar a essência histórica do objeto. Em contrapartida, identificou-se uma carência real: a falta de meios digitais centralizados para comunicação comunitária.</p>
-      
-      <p>Assim, o projeto foi reorientado e aprovado com entusiasmo para a criação deste **Website Informativo**, desenvolvido em linguagem HTML, focado em servir à população.</p>
-
-      <h3><center>A Solução Tecnológica Implementada</center></h3>
-      <ul class="styled-list" style="text-indent: 0;">
-        <li>**Website Comunitário:** Centralização de notícias, horários de missas, história e calendário de eventos em uma plataforma acessível via celular e computador.</li>
-        <li>**QR Codes nas Capelinhas:** As santinhas passam a ter um código QR fixado discretamente. Ao apontar a câmera do celular, a família acessa este site diretamente, conectando o ritual tradicional à informação moderna.</li>
-        <li>**Preservação e Acesso:** O uso da tecnologia permite que a história de Fazenda Souza, antes restrita a livros físicos ou memória oral, esteja disponível para as novas gerações na internet.</li>
-        <li>**Hospedagem Gratuita:** O projeto utiliza o GitHub Pages, garantindo que o site permaneça no ar sem custos para a comunidade, promovendo sustentabilidade ao projeto.</li>
-      </ul>
-      <span class="citation">[Fonte: MILIOLI, 2022.]</span>
-    </main>
-  </section>
-
-  <section id="contato" class="page-section">
-    <main>
-      <h2>Calendário de Eventos & Contato</h2>
-      <p style="text-indent: 0;">A vida em Fazenda Souza é marcada por celebrações que unem fé, gastronomia típica italiana e a valorização do trabalho rural.</p>
-
-      <div class="card-grid">
-        <div class="card" style="font-size: 0.95rem;">
-          <h3><center>🚜 Festa do Agricultor</center></h3>
-          <figure>
-            <img src="Festa do Agricultor.png" alt="Festa do Agricultor">
-            <figcaption>
-              Desfile típico da Festa do Agricultor
-              <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-            </figcaption>
-          </figure>
-          <p>Realizada a cada dois anos (geralmente entre julho e agosto), é a maior vitrine da identidade do distrito. A festa celebra a colheita e o trabalho rural com desfiles típicos de tratores e carros alegóricos, café colonial, exposições de máquinas e shows. É um momento de reafirmação da cultura italiana e da força do campo.</p>
-        </div>
-
-        <div class="card" style="font-size: 0.95rem;">
-          <h3><center>🙏 Festa de N. Sra. da Saúde</center></h3>
-          <figure>
-            <img src="Imagem Nossa Senhora de Saúde.png" alt="Imagem de Nossa Senhora da Saúde">
-            <figcaption>
-              Imagem de Nossa Senhora da Saúde localizada no interior da Igreja Matriz
-              <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-            </figcaption>
-          </figure>
-          <p>Celebrada anualmente em novembro (dia 21), homenageia a padroeira da paróquia. A festividade envolve missas solenes e um grandioso almoço tradicional no salão paroquial, servindo a clássica sopa de agnolini, pien, carne e saladas, reunindo centenas de devotos.</p>
-        </div>
-        
-        <div class="card" style="font-size: 0.95rem;">
-          <h3><center>🌹 Festa de N. Sra. de Lourdes</center></h3>
-          <figure>
-            <img src="Imagem Nossa Senhora de Lourdes.png" alt="Imagem de Nossa Senhora de Lourdes">
-            <figcaption>
-              Imagem de Nossa Senhora de Lourdes utilizada durante as celebrações
-              <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
-            </figcaption>
-          </figure>
-          <p>Ocorre tradicionalmente em fevereiro ou agosto (mês vocacional). Destaca-se pelas procissões luminosas e, em alguns anos, por encenações teatrais da aparição da santa na gruta, realizadas pela própria comunidade no Seminário dos Josefinos.</p>
-        </div>
-      </div>
-      <span class="citation">[Fonte: ANDREOLLA, 2019.]</span>
-
-      <div id="calendario-provisorio" style="margin: 40px 0; padding: 30px; background-color: #f7f3ed; border: 2px dashed var(--accent-color); border-radius: var(--radius); text-align: center;">
-        <h3>📅 Calendário de Eventos</h3>
-        <p style="text-indent: 0;"><center>O calendário completo com as datas dos próximos eventos e celebrações da Paróquia de Fazenda Souza e comunidades (datas e horários poderão ser atualizados, sempre verifique antes com as lideranças da comunidade).</center></p>
-        <div style="height: 250px; background-color: #fff; border: 1px solid #ddd; margin: 20px auto; border-radius: 4px;">
-          <p style="text-indent: 0; padding-top: 100px; color: #999;">ESPAÇO RESERVADO PARA O CALENDÁRIO</p>
-        </div>
-      </div>
-      <h3 style="text-align: center;">Entre em Contato</h3>
-      <div class="contact-info">
-        <p style="text-indent: 0;">Para dúvidas sobre eventos, horários de missas ou sugestões para o site, entre em contato com as lideranças locais:</p>
-        <div class="contact-item"><strong>📍 Endereço:</strong> Av. Dante Marcucci, 5638, Fazenda Souza - Caxias do Sul - Rio Grande do Sul, 95125-000</div>
-	<div class="contact-item"><strong>📜 Fundação:</strong> 25 de Dezembro de 1959</div>
-        <div class="contact-item"><strong>✉️ E-mail da paróquia:</strong> paroquiafazendasouza@yahoo.com.br</div>
-        <div class="contact-item"><strong>👨‍💻 Idealizador:</strong> Gabriel Scopel Milioli (Acadêmico de Engenharia da Computação - UNINTER)</div>
-        <div class="contact-item"><strong>📞 Fone da paróquia:</strong> (54) 3267-1368 (Telefone da Secretaria Paroquial)</div>
-	<div class="contact-item"><strong>🙏 Horários de Missa:</strong> Sábados: 18h | Domingos: 09h</div>
-	<div class="contact-item"><strong>⛪️ Capela Beato João Schiavo:</strong> 1º e 3º domingo do mês, às 16h</div>
-	
-      </div>
-    </main>
-  </section>
-
-  <section id="avaliacao" class="page-section">
-    <main>
-      <h2>Avalie o Nosso Site</h2>
-      <p>Sua opinião é fundamental para o desenvolvimento deste Projeto de Extensão. Por favor, responda ao formulário abaixo para nos ajudar a melhorar a inclusão digital em Fazenda Souza e a preservação de nossa história.</p>
-      
-      <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <div class="google-form-container">
-           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfl2AutiZgkYIFjcu3TGvMms8jMCCrw51kyg1fhon3TNoH6Vg/viewform?embedded=true" width="100%" height="3475" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
-        </div>
-        <p style="text-align:center; font-size:0.9rem; margin-top:10px; color:#666; text-indent: 0;">(Se o formulário não carregar, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfl2AutiZgkYIFjcu3TGvMms8jMCCrw51kyg1fhon3TNoH6Vg/viewform" target="_blank" style="text-decoration:underline; color:var(--primary-color);">clique aqui</a> para abrir em nova guia)</p>
-      </div>
-    </main>
-  </section>
-
-  <footer>
-    <p>Projeto de Atividade Extensionista: Tecnologia aplicada à Inclusão Digital</p>
-    <p>Autor: Gabriel Scopel Milioli (RU 4062130) - Centro Universitário Internacional UNINTER</p>
-    
-    <div class="footer-ref">
-      <h4>REFERÊNCIAS BIBLIOGRÁFICAS:</h4>
-      <p><strong>ANDREOLLA, Caroline Lipreli.</strong> Inventário Participativo de Patrimônio Cultural em Fazenda Souza/RS. Trabalho apresentado ao Programa de Pós-Graduação em História – Mestrado Profissional, da Universidade de Caxias do Sul, como requisito para obtenção do grau de Mestre em História, 2019.</p>
-      <p><strong>MILIOLI, Gabriel Scopel.</strong> Capelinhas: Unindo tradições religiosas e tecnologia aplicada à inclusão digital no distrito de Fazenda Souza. Projeto apresentado ao curso de Bacharelado em Engenharia de Computação, do Centro Universitário Internacional UNINTER, como atividade extensionista de levantamento, 2022.</p>
-    </div>
-
-    <div class="footer-links">
-      <a onclick="showPage('home')">Início</a> | 
-      <a onclick="showPage('historia')">História</a> | 
-      <a onclick="showPage('contato')">Contato</a> |
-      <a onclick="showPage('avaliacao')">Avaliação</a>
-    </div>
-  </footer>
-
-  <script>
-    function showPage(pageId) {
-      // Oculta todas as seções
-      const sections = document.querySelectorAll('.page-section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-
-      // Mostra a seção desejada
-      const activeSection = document.getElementById(pageId);
-      if (activeSection) {
-        activeSection.classList.add('active');
-        window.scrollTo(0, 0);
-      }
-
-      // Atualiza o menu de navegação
-      const navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-      });
-      
-      // Destaca o link ativo
-      const clickedLink = Array.from(navLinks).find(link => link.getAttribute('onclick').includes(pageId));
-      if(clickedLink) clickedLink.classList.add('active');
-
-      // Fecha o menu se estiver aberto
-      const navMenu = document.getElementById('navMenu');
-      if (navMenu.classList.contains('show')) {
-        navMenu.classList.remove('show');
-      }
-    }
-
-    function toggleMenu() {
-      const navMenu = document.getElementById('navMenu');
-      navMenu.classList.toggle('show');
-    }
-  </script>
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.querySelector(`.nav-link[onclick="showPage('${id}')"]`).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
