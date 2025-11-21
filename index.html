@@ -60,6 +60,20 @@
       min-height: 200px; 
       object-fit: cover;
     }
+    
+    /* PADRONIZAÇÃO DE IMAGENS CONFORME SOLICITADO */
+    .page-section figure img {
+      width: 100%;
+      max-width: 450px;
+      max-height: 350px; /* Seu limite de altura */
+      height: auto;
+      object-fit: cover; /* Usado 'cover' para preencher a área e manter proporção */
+      display: block;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    /* FIM DA PADRONIZAÇÃO */
 
     figcaption {
       font-size: 0.95rem;
@@ -125,7 +139,8 @@
 
     /* --- BACKGROUND --- */
     .hero {
-      background: linear-gradient(rgba(74, 44, 42, 0.85), rgba(56, 92, 79, 0.8));
+      /* Usando a imagem da Vista Aérea como fundo */
+      background: linear-gradient(rgba(74, 44, 42, 0.85), rgba(56, 92, 79, 0.8)), url('Vista Aérea de Fazenda Souza.png');
       background-size: cover;
       background-position: center;
       background-color: #4A2C2A; /* Fallback */
@@ -252,8 +267,22 @@
     /* Remove o recuo ABNT de itens de contato e parágrafos de introdução na seção de contato */
     .contact-info p { text-indent: 0; }
     .contact-item { margin-bottom: 15px; font-size: 1.1rem; }
-    .google-form-container { position: relative; overflow: hidden; padding-top: 100%; }
-    .google-form-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    
+    /* AJUSTE CSS PARA O FORMULÁRIO DO GOOGLE COM ALTURA GRANDE */
+    .google-form-container { 
+        position: relative; 
+        /* Altura fixa ajustada para a altura do iframe (3475px) mais uma margem */
+        height: 3500px; 
+        overflow: hidden; /* Mantém o iframe contido */
+        padding-top: 0; /* Remove o padding que causava proporção 1:1 */
+    }
+    .google-form-container iframe { 
+        width: 100%; 
+        height: 100%; /* Ocupa a altura definida acima */
+        border: 0; 
+        display: block; /* Garante que o iframe seja um bloco padrão */
+        position: static; /* Remove a posição absoluta que causava problemas */
+    }
 
     /* --- RODAPÉ --- */
     footer {
@@ -314,25 +343,7 @@
       }
       .nav-menu.show { display: flex; }
     }
-  
-/* Padronização de imagens */
-.page-section figure img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    display: block;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.page-section figure img {
-    max-height: 350px;
-}
-
-</style>
+  </style>
 </head>
 <body>
 
@@ -405,7 +416,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
       <h3><center>Das Origens em "Pouso Alto" aos Dias Atuais</center></h3>
       <p>A história de Fazenda Souza remonta a um território vasto que inicialmente pertencia a Santo Antônio da Patrulha, município mãe de diversas localidades gaúchas. Em 1876, a região tornou-se o que seria o 7º distrito de São Francisco de Paula, desmembrado de Santo Antônio. Conforme estudos históricos, o primeiro proprietário dessas terras chamava-se <strong>Ignácio de Sousa Corrêa</strong>. Originalmente, a localidade era conhecida como "Pouso Alto", um ponto de parada estratégico. O nome atual, "Fazenda Souza", consolidou-se naturalmente porque os tropeiros que passavam pela região para o comércio de gado reconheciam o local pelo sobrenome do proprietário das terras.</p>
 
-      <p>A ocupação efetiva e a formação da identidade cultural que conhecemos hoje começaram por volta de <strong>1880</strong>, com a chegada dos primeiros imigrantes italianos. Um segundo grupo significativo chegou em 1895. Essas famílias, vindas majoritariamente de Feltre (Itália), trouxeram consigo a força de trabalho e a fé católica. Elas desenvolveram atividades fundamentais para a economia local incipiente: a agricultura de subsistência, a criação de animais e a exploração da madeira, abundante na região das araucárias. Esse legado transformou a paisagem e a cultura local, caracterizada hoje pela forte produção de hortifrutigranjeiros e pela religiosidade presente em cada esquina.</p>
+      <p>A ocupação efetiva e a formação da identidade cultural que conhecemos hoje começaram por volta de **1880**, com a chegada dos primeiros imigrantes italianos. Um segundo grupo significativo chegou em 1895. Essas famílias, vindas majoritariamente de Feltre (Itália), trouxeram consigo a força de trabalho e a fé católica. Elas desenvolveram atividades fundamentais para a economia local incipiente: a agricultura de subsistência, a criação de animais e a exploração da madeira, abundante na região das araucárias. Esse legado transformou a paisagem e a cultura local, caracterizada hoje pela forte produção de hortifrutigranjeiros e pela religiosidade presente em cada esquina.</p>
 
       <h3><center>Educação e Desenvolvimento Comunitário</center></h3>
       
@@ -427,7 +438,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         </figure>
       </div>
 
-      <p>O distrito cresceu em torno de suas instituições sociais e religiosas. A educação sempre foi um pilar central para a comunidade. A <strong>Escola Municipal Padre João Schiavo</strong>, que antigamente se chamava Colégio Santa Maria Goretti (fundado em 1957 e administrado pelas irmãs Murialdinas), e a <strong>Escola Estadual de Ensino Médio Antônio Avelino Boff</strong> são marcos desse desenvolvimento. Elas não apenas educam, mas preservam a história através de projetos pedagógicos que valorizam o patrimônio local e a identidade dos descendentes.</p>
+      <p>O distrito cresceu em torno de suas instituições sociais e religiosas. A educação sempre foi um pilar central para a comunidade. A **Escola Municipal Padre João Schiavo**, que antigamente se chamava Colégio Santa Maria Goretti (fundado em 1957 e administrado pelas irmãs Murialdinas), e a **Escola Estadual de Ensino Médio Antônio Avelino Boff** são marcos desse desenvolvimento. Elas não apenas educam, mas preservam a história através de projetos pedagógicos que valorizam o patrimônio local e a identidade dos descendentes.</p>
 
       <p>Atualmente, Fazenda Souza possui cerca de 2.320 habitantes residindo em uma área total de 7.378 hectares, o que representa aproximadamente 5,9% da área rural do município de Caxias do Sul. A comunidade mantém viva a herança de um passado de trabalho árduo e fé inabalável, equilibrando a tradição rural com as necessidades de modernização.
       <span class="citation">[Fonte: ANDREOLLA, 2019.]</span></p>
@@ -463,7 +474,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
 
       <div class="card" style="background-color: #fff8f0; border-left-color: var(--accent-color);">
         <h3><center>📱 A Capelinha como Ponte Digital</center></h3>
-        <p>Como parte deste projeto de extensão e atendendo à necessidade de atualização tecnológica apontada na fase de levantamento e análise, propõe-se o uso das capelinhas como instrumento de <strong>Inclusão Digital</strong>. A fixação de <strong>QR Codes</strong> e URLs na estrutura das capelinhas permitirá que as famílias acessem instantaneamente este site comunitário pelo celular. Assim, a tradição se mantém como mensageira, mas agora conectando os fiéis a conteúdo online, notícias da paróquia e grupos de avisos, substituindo os antigos bilhetes de papel por informação digital atualizada.</p>
+        <p>Como parte deste projeto de extensão e atendendo à necessidade de atualização tecnológica apontada na fase de levantamento e análise, propõe-se o uso das capelinhas como instrumento de **Inclusão Digital**. A fixação de **QR Codes** e URLs na estrutura das capelinhas permitirá que as famílias acessem instantaneamente este site comunitário pelo celular. Assim, a tradição se mantém como mensageira, mas agora conectando os fiéis a conteúdo online, notícias da paróquia e grupos de avisos, substituindo os antigos bilhetes de papel por informação digital atualizada.</p>
         <span class="citation">[Fonte: MILIOLI, 2022.]</span>
       </div>
     </main>
@@ -490,7 +501,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
 
         <div class="card">
           <h3><center>⚽ Clube Minuano</center></h3>
-          <p>Fundado oficialmente em 1968 por lideranças como José Copetti e Antoninho Mazzochi, a <strong>Associação Cultural e Esportiva Minuano</strong> é o coração social do distrito. Começou com jogos de futebol em terrenos emprestados e hoje possui sede própria e campo. É o palco de grandes eventos, bailes e dos tradicionais "filós" (encontros com comida típica, vinho e jogos de cartas), representando a união e o lazer dos moradores.</p>
+          <p>Fundado oficialmente em 1968 por lideranças como José Copetti e Antoninho Mazzochi, a **Associação Cultural e Esportiva Minuano** é o coração social do distrito. Começou com jogos de futebol em terrenos emprestados e hoje possui sede própria e campo. É o palco de grandes eventos, bailes e dos tradicionais "filós" (encontros com comida típica, vinho e jogos de cartas), representando a união e o lazer dos moradores.</p>
         </div>
 
         <div class="card">
@@ -531,19 +542,19 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
   <section id="inclusao" class="page-section">
     <main>
       <h2>Inclusão Digital e Social</h2>
-      <p>Este website não é apenas um repositório de informações; é uma ferramenta de transformação social baseada nos Objetivos de Desenvolvimento Sustentável (ODS) da ONU, especificamente o <strong>ODS 11 (Cidades e Comunidades Sustentáveis)</strong>.</p>
+      <p>Este website não é apenas um repositório de informações; é uma ferramenta de transformação social baseada nos Objetivos de Desenvolvimento Sustentável (ODS) da ONU, especificamente o **ODS 11 (Cidades e Comunidades Sustentáveis)**.</p>
 
       <h3><center>Do Projeto à Realidade</center></h3>
       <p>Inicialmente, a proposta acadêmica visava incorporar tecnologias como velas eletrônicas às capelinhas. No entanto, em diálogo com as lideranças locais e o sacerdote responsável, percebeu-se que a comunidade valoriza a tradição original dos artefatos devocionais. A proposta da vela eletrônica foi rejeitada por alterar a essência histórica do objeto. Em contrapartida, identificou-se uma carência real: a falta de meios digitais centralizados para comunicação comunitária.</p>
       
-      <p>Assim, o projeto foi reorientado e aprovado com entusiasmo para a criação deste <strong>Website Informativo</strong>, desenvolvido em linguagem HTML, focado em servir à população.</p>
+      <p>Assim, o projeto foi reorientado e aprovado com entusiasmo para a criação deste **Website Informativo**, desenvolvido em linguagem HTML, focado em servir à população.</p>
 
       <h3><center>A Solução Tecnológica Implementada</center></h3>
       <ul class="styled-list" style="text-indent: 0;">
-        <li><strong>Website Comunitário:</strong> Centralização de notícias, horários de missas, história e calendário de eventos em uma plataforma acessível via celular e computador.</li>
-        <li><strong>QR Codes nas Capelinhas:</strong> As santinhas passam a ter um código QR fixado discretamente. Ao apontar a câmera do celular, a família acessa este site diretamente, conectando o ritual tradicional à informação moderna.</li>
-        <li><strong>Preservação e Acesso:</strong> O uso da tecnologia permite que a história de Fazenda Souza, antes restrita a livros físicos ou memória oral, esteja disponível para as novas gerações na internet.</li>
-        <li><strong>Hospedagem Gratuita:</strong> O projeto utiliza o GitHub Pages, garantindo que o site permaneça no ar sem custos para a comunidade, promovendo sustentabilidade ao projeto.</li>
+        <li>**Website Comunitário:** Centralização de notícias, horários de missas, história e calendário de eventos em uma plataforma acessível via celular e computador.</li>
+        <li>**QR Codes nas Capelinhas:** As santinhas passam a ter um código QR fixado discretamente. Ao apontar a câmera do celular, a família acessa este site diretamente, conectando o ritual tradicional à informação moderna.</li>
+        <li>**Preservação e Acesso:** O uso da tecnologia permite que a história de Fazenda Souza, antes restrita a livros físicos ou memória oral, esteja disponível para as novas gerações na internet.</li>
+        <li>**Hospedagem Gratuita:** O projeto utiliza o GitHub Pages, garantindo que o site permaneça no ar sem custos para a comunidade, promovendo sustentabilidade ao projeto.</li>
       </ul>
       <span class="citation">[Fonte: MILIOLI, 2022.]</span>
     </main>
@@ -635,8 +646,8 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
     
     <div class="footer-ref">
       <h4>REFERÊNCIAS BIBLIOGRÁFICAS:</h4>
-      <p><h4><strong>ANDREOLLA, Caroline Lipreli.</strong> Inventário Participativo de Patrimônio Cultural em Fazenda Souza/RS. Trabalho apresentado ao Programa de Pós-Graduação em História – Mestrado Profissional, da Universidade de Caxias do Sul, como requisito para obtenção do grau de Mestre em História, 2019.</h4></p>
-      <p><h4><strong>MILIOLI, Gabriel Scopel.</strong> Capelinhas: Unindo tradições religiosas e tecnologia aplicada à inclusão digital no distrito de Fazenda Souza. Projeto apresentado ao curso de Bacharelado em Engenharia de Computação, do Centro Universitário Internacional UNINTER, como atividade extensionista de levantamento, 2022.<h4></p>
+      <p><strong>ANDREOLLA, Caroline Lipreli.</strong> Inventário Participativo de Patrimônio Cultural em Fazenda Souza/RS. Trabalho apresentado ao Programa de Pós-Graduação em História – Mestrado Profissional, da Universidade de Caxias do Sul, como requisito para obtenção do grau de Mestre em História, 2019.</p>
+      <p><strong>MILIOLI, Gabriel Scopel.</strong> Capelinhas: Unindo tradições religiosas e tecnologia aplicada à inclusão digital no distrito de Fazenda Souza. Projeto apresentado ao curso de Bacharelado em Engenharia de Computação, do Centro Universitário Internacional UNINTER, como atividade extensionista de levantamento, 2022.</p>
     </div>
 
     <div class="footer-links">
