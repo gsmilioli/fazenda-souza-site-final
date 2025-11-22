@@ -42,7 +42,7 @@
       border-radius: var(--radius); 
     }
 
-    /* Estilos específicos para legendas e figuras */
+    /* Estilos para legendas e figuras */
     figure {
       margin: 25px 0;
       text-align: center;
@@ -55,26 +55,24 @@
     figure img {
       margin: 0 auto;
       box-shadow: var(--shadow);
-      /* Um fundo cinza claro caso a imagem ainda não tenha sido carregada */
       background-color: #eaeaea; 
       min-height: 200px; 
       object-fit: cover;
     }
     
-    /* PADRONIZAÇÃO DE IMAGENS CONFORME SOLICITADO E CORRIGIDO */
+    /* PADRONIZAÇÃO DE IMAGENS */
     .page-section figure img {
       width: 100%;
       max-width: 450px;
       max-height: 350px; 
       height: auto;
-      object-fit: contain; /* CORRIGIDO: Alterado para 'contain' para evitar cortes */
+      object-fit: contain; 
       display: block;
       margin: 0 auto;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    /* FIM DA PADRONIZAÇÃO */
-
+   
     figcaption {
       font-size: 0.95rem;
       color: #444;
@@ -139,7 +137,6 @@
 
     /* --- BACKGROUND --- */
     .hero {
-      /* CORRIGIDO: Removida a imagem de fundo para evitar problemas com caminho de arquivo no GitHub. */
       background: linear-gradient(rgba(74, 44, 42, 0.85), rgba(56, 92, 79, 0.8)); 
       background-size: cover;
       background-position: center;
@@ -221,15 +218,15 @@
 
     .card:hover { transform: translateY(-5px); }
 
-    /* Sobrescreve o estilo do parágrafo dentro dos cards */
+    /* Sobrescreve o estilo do parágrafo */
     .card p {
-      text-align: center; /* Centraliza o texto das cards */
-      text-indent: 0; /* Remove o recuo ABNT dentro das cards */
+      text-align: center; /* Centraliza o texto */
+      text-indent: 0; /* Remove o recuo ABNT */
     }
     
-    /* Ajuste de imagem dentro do card */
+    /* Ajuste de imagem dentro */
     .card figure {
-      margin: 15px -10px; /* Estica um pouco a imagem dentro do card */
+      margin: 15px -10px; /* Estica um pouco a imagem */
       background: none;
       border: none;
     }
@@ -252,7 +249,7 @@
       margin-top: 5px;
       font-style: italic;
       text-align: right;
-      text-indent: 0; /* Garante que a citação não tenha recuo */
+      text-indent: 0; 
     }
 
     .contact-info {
@@ -264,24 +261,23 @@
       border-top: 5px solid var(--primary-color);
     }
     
-    /* Remove o recuo ABNT de itens de contato e parágrafos de introdução na seção de contato */
+    /* Remove o recuo dos parágrafos */
     .contact-info p { text-indent: 0; }
     .contact-item { margin-bottom: 15px; font-size: 1.1rem; }
     
-    /* AJUSTE CSS PARA O FORMULÁRIO DO GOOGLE COM ALTURA GRANDE */
+    /* AJUSTE CSS PARA O FORMULÁRIO DO GOOGLE */
     .google-form-container { 
         position: relative; 
-        /* Altura fixa ajustada para a altura do iframe (3475px) mais uma margem */
         height: 3500px; 
-        overflow: hidden; /* Mantém o iframe contido */
-        padding-top: 0; /* Remove o padding que causava proporção 1:1 */
+        overflow: hidden; 
+        padding-top: 0; 
     }
     .google-form-container iframe { 
         width: 100%; 
-        height: 100%; /* Ocupa a altura definida acima */
+        height: 100%; 
         border: 0; 
-        display: block; /* Garante que o iframe seja um bloco padrão */
-        position: static; /* Remove a posição absoluta que causava problemas */
+        display: block; 
+        position: static; 
     }
 
     /* --- RODAPÉ --- */
@@ -297,17 +293,17 @@
     footer p {
         text-align: center;
         margin-bottom: 10px;
-        text-indent: 0; /* Garante que o rodapé não tenha recuo */
+        text-indent: 0; 
     }
 
     .footer-ref {
-        font-size: 0.7rem; /* Fonte menor para as referências */
+        font-size: 0.7rem; 
         opacity: 0.8;
         max-width: 800px;
         margin: 10px auto;
         border-top: 1px solid rgba(255,255,255,0.1);
         padding-top: 10px;
-        text-align: left; /* Alinha as referências à esquerda para melhor leitura */
+        text-align: left;
     }
     
     .footer-ref p {
@@ -409,14 +405,14 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         <img src="Vista Aérea de Fazenda Souza.png" alt="Vista aérea do distrito de Fazenda Souza">
         <figcaption>
           Vista aérea do distrito de Fazenda Souza
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+          <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 95.</span>
         </figcaption>
       </figure>
 
       <h3><center>Das Origens em "Pouso Alto" aos Dias Atuais</center></h3>
       <p>A história de Fazenda Souza remonta a um território vasto que inicialmente pertencia a Santo Antônio da Patrulha, município mãe de diversas localidades gaúchas. Em 1876, a região tornou-se o que seria o 7º distrito de São Francisco de Paula, desmembrado de Santo Antônio. Conforme estudos históricos, o primeiro proprietário dessas terras chamava-se <strong>Ignácio de Sousa Corrêa</strong>. Originalmente, a localidade era conhecida como "Pouso Alto", um ponto de parada estratégico. O nome atual, "Fazenda Souza", consolidou-se naturalmente porque os tropeiros que passavam pela região para o comércio de gado reconheciam o local pelo sobrenome do proprietário das terras.</p>
 
-      <p>A ocupação efetiva e a formação da identidade cultural que conhecemos hoje começaram por volta de **1880**, com a chegada dos primeiros imigrantes italianos. Um segundo grupo significativo chegou em 1895. Essas famílias, vindas majoritariamente de Feltre (Itália), trouxeram consigo a força de trabalho e a fé católica. Elas desenvolveram atividades fundamentais para a economia local incipiente: a agricultura de subsistência, a criação de animais e a exploração da madeira, abundante na região das araucárias. Esse legado transformou a paisagem e a cultura local, caracterizada hoje pela forte produção de hortifrutigranjeiros e pela religiosidade presente em cada esquina.</p>
+      <p>A ocupação efetiva e a formação da identidade cultural que conhecemos hoje começaram por volta de <strong>1880</strong>, com a chegada dos primeiros imigrantes italianos. Um segundo grupo significativo chegou em 1895. Essas famílias, vindas majoritariamente de Feltre (Itália), trouxeram consigo a força de trabalho e a fé católica. Elas desenvolveram atividades fundamentais para a economia local incipiente: a agricultura de subsistência, a criação de animais e a exploração da madeira, abundante na região das araucárias. Esse legado transformou a paisagem e a cultura local, caracterizada hoje pela forte produção de hortifrutigranjeiros e pela religiosidade presente em cada esquina.</p>
 
       <h3><center>Educação e Desenvolvimento Comunitário</center></h3>
       
@@ -425,7 +421,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
           <img src="Escola Padre João Schiavo.png" alt="Escola Municipal de Ensino Fundamental Padre João Schiavo">
           <figcaption>
              Escola Municipal de Ensino Fundamental Padre João Schiavo
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+            <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 27.</span>
           </figcaption>
         </figure>
 
@@ -433,12 +429,12 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
           <img src="Escola Antônio Avelino Boff.png" alt="Escola Estadual de Ensino Médio Antônio Avelino Boff">
           <figcaption>
              Escola Estadual de Ensino Médio Antônio Avelino Boff
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+            <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 28.</span>
           </figcaption>
         </figure>
       </div>
 
-      <p>O distrito cresceu em torno de suas instituições sociais e religiosas. A educação sempre foi um pilar central para a comunidade. A **Escola Municipal Padre João Schiavo**, que antigamente se chamava Colégio Santa Maria Goretti (fundado em 1957 e administrado pelas irmãs Murialdinas), e a **Escola Estadual de Ensino Médio Antônio Avelino Boff** são marcos desse desenvolvimento. Elas não apenas educam, mas preservam a história através de projetos pedagógicos que valorizam o patrimônio local e a identidade dos descendentes.</p>
+      <p>O distrito cresceu em torno de suas instituições sociais e religiosas. A educação sempre foi um pilar central para a comunidade. A <strong>Escola Municipal Padre João Schiavo</strong>, que antigamente se chamava Colégio Santa Maria Goretti (fundado em 1957 e administrado pelas irmãs Murialdinas), e a <strong>Escola Estadual de Ensino Médio Antônio Avelino Boff</strong> são marcos desse desenvolvimento. Elas não apenas educam, mas preservam a história através de projetos pedagógicos que valorizam o patrimônio local e a identidade dos descendentes.</p>
 
       <p>Atualmente, Fazenda Souza possui cerca de 2.320 habitantes residindo em uma área total de 7.378 hectares, o que representa aproximadamente 5,9% da área rural do município de Caxias do Sul. A comunidade mantém viva a herança de um passado de trabalho árduo e fé inabalável, equilibrando a tradição rural com as necessidades de modernização.
       <span class="citation">[Fonte: ANDREOLLA, 2019.]</span></p>
@@ -453,7 +449,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         <img src="Capelinha de Nossa Senhora antiga.jpg" alt="Capelinha de Nossa Senhora antiga">
         <figcaption>
           Capelinha de Nossa Senhora antiga
-          <span class="source-ref">Fonte: MILIOLI, 2022.</span>
+          <span class="source-ref">Fonte: MILIOLI, 2022, p. 5.</span>
         </figcaption>
       </figure>
 
@@ -464,7 +460,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         <img src="Livro Tombo da Paróquia.png" alt="Trecho do Livro Tombo">
         <figcaption>
           Trecho do Livro Tombo que registra pela primeira vez a atividade das capelinhas em Fazenda Souza
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+          <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 64.</span>
         </figcaption>
       </figure>
 
@@ -472,7 +468,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
 
       <div class="card" style="background-color: #fff8f0; border-left-color: var(--accent-color);">
         <h3><center>📱 A Capelinha como Ponte Digital</center></h3>
-        <p>Como parte deste projeto de extensão e atendendo à necessidade de atualização tecnológica apontada na fase de levantamento e análise, propõe-se o uso das capelinhas como instrumento de **Inclusão Digital**. A fixação de **QR Codes** e URLs na estrutura das capelinhas permitirá que as famílias acessem instantaneamente este site comunitário pelo celular. Assim, a tradição se mantém como mensageira, mas agora conectando os fiéis a conteúdo online, notícias da paróquia e grupos de avisos, substituindo os antigos bilhetes de papel por informação digital atualizada.</p>
+        <p>Como parte deste projeto de extensão e atendendo à necessidade de atualização tecnológica apontada na fase de levantamento e análise, propõe-se o uso das capelinhas como instrumento de <strong>Inclusão Digital</strong>. A fixação de <strong>QR Codes</strong> e URLs na estrutura das capelinhas permitirá que as famílias acessem instantaneamente este site comunitário pelo celular. Assim, a tradição se mantém como mensageira, mas agora conectando os fiéis a conteúdo online, notícias da paróquia e grupos de avisos, substituindo os antigos bilhetes de papel por informação digital atualizada.</p>
         <span class="citation">[Fonte: MILIOLI, 2022.]</span>
       </div>
     </main>
@@ -487,7 +483,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         <img src="Paróquia Nossa Senhora da Saúde.png" alt="Igreja Matriz Nossa Senhora da Saúde">
         <figcaption>
           Igreja Matriz Nossa Senhora da Saúde
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+          <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 31.</span>
         </figcaption>
       </figure>
 
@@ -499,7 +495,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
 
         <div class="card">
           <h3><center>⚽ Clube Minuano</center></h3>
-          <p>Fundado oficialmente em 1968 por lideranças como José Copetti e Antoninho Mazzochi, a **Associação Cultural e Esportiva Minuano** é o coração social do distrito. Começou com jogos de futebol em terrenos emprestados e hoje possui sede própria e campo. É o palco de grandes eventos, bailes e dos tradicionais "filós" (encontros com comida típica, vinho e jogos de cartas), representando a união e o lazer dos moradores.</p>
+          <p>Fundado oficialmente em 1968 por lideranças como José Copetti e Antoninho Mazzochi, a <strong>Associação Cultural e Esportiva Minuano</strong> é o coração social do distrito. Começou com jogos de futebol em terrenos emprestados e hoje possui sede própria e campo. É o palco de grandes eventos, bailes e dos tradicionais "filós" (encontros com comida típica, vinho e jogos de cartas), representando a união e o lazer dos moradores.</p>
         </div>
 
         <div class="card">
@@ -512,7 +508,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         <img src="Esporte Clube Minuano.png" alt="Associação Cultural e Esportiva Minuano">
         <figcaption>
           Associação Cultural e Esportiva Minuano (Clube Minuano)
-          <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+          <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 30.</span>
         </figcaption>
       </figure>
       
@@ -521,7 +517,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
           <img src="Seminário Josefinos de Murialdo.png" alt="Seminário Josefinos de Murialdo">
           <figcaption>
             Centro de Eventos e Hospedagem Murialdo (antigo Seminário dos Josefinos de Murialdo)
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+            <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 32.</span>
           </figcaption>
         </figure>
 
@@ -529,7 +525,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
           <img src="Capela Beato João Schiavo.png" alt="Capela Padre João Schiavo">
           <figcaption>
             Capela Padre João Schiavo
-            <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+            <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 74.</span>
           </figcaption>
         </figure>
       </div>
@@ -540,19 +536,19 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
   <section id="inclusao" class="page-section">
     <main>
       <h2>Inclusão Digital e Social</h2>
-      <p>Este website não é apenas um repositório de informações; é uma ferramenta de transformação social baseada nos Objetivos de Desenvolvimento Sustentável (ODS) da ONU, especificamente o **ODS 11 (Cidades e Comunidades Sustentáveis)**.</p>
+      <p>Este website não é apenas um repositório de informações; é uma ferramenta de transformação social baseada nos Objetivos de Desenvolvimento Sustentável (ODS) da ONU, especificamente o <strong>ODS 11 (Cidades e Comunidades Sustentáveis)</strong>.</p>
 
       <h3><center>Do Projeto à Realidade</center></h3>
       <p>Inicialmente, a proposta acadêmica visava incorporar tecnologias como velas eletrônicas às capelinhas. No entanto, em diálogo com as lideranças locais e o sacerdote responsável, percebeu-se que a comunidade valoriza a tradição original dos artefatos devocionais. A proposta da vela eletrônica foi rejeitada por alterar a essência histórica do objeto. Em contrapartida, identificou-se uma carência real: a falta de meios digitais centralizados para comunicação comunitária.</p>
       
-      <p>Assim, o projeto foi reorientado e aprovado com entusiasmo para a criação deste **Website Informativo**, desenvolvido em linguagem HTML, focado em servir à população.</p>
+      <p>Assim, o projeto foi reorientado e aprovado com entusiasmo para a criação deste <strong>Website Informativo</strong>, desenvolvido em linguagem HTML, focado em servir à população.</p>
 
       <h3><center>A Solução Tecnológica Implementada</center></h3>
       <ul class="styled-list" style="text-indent: 0;">
-        <li>**Website Comunitário:** Centralização de notícias, horários de missas, história e calendário de eventos em uma plataforma acessível via celular e computador.</li>
-        <li>**QR Codes nas Capelinhas:** As santinhas passam a ter um código QR fixado discretamente. Ao apontar a câmera do celular, a família acessa este site diretamente, conectando o ritual tradicional à informação moderna.</li>
-        <li>**Preservação e Acesso:** O uso da tecnologia permite que a história de Fazenda Souza, antes restrita a livros físicos ou memória oral, esteja disponível para as novas gerações na internet.</li>
-        <li>**Hospedagem Gratuita:** O projeto utiliza o GitHub Pages, garantindo que o site permaneça no ar sem custos para a comunidade, promovendo sustentabilidade ao projeto.</li>
+        <li><strong>Website Comunitário:</strong> Centralização de notícias, horários de missas, história e calendário de eventos em uma plataforma acessível via celular e computador.</li>
+        <li><strong>QR Codes nas Capelinhas:</strong> As santinhas passam a ter um código QR fixado discretamente. Ao apontar a câmera do celular, a família acessa este site diretamente, conectando o ritual tradicional à informação moderna.</li>
+        <li><strong>Preservação e Acesso:</strong> O uso da tecnologia permite que a história de Fazenda Souza, antes restrita a livros físicos ou memória oral, esteja disponível para as novas gerações na internet.</li>
+        <li><strong>Hospedagem Gratuita:</strong> O projeto utiliza o GitHub Pages, garantindo que o site permaneça no ar sem custos para a comunidade, promovendo sustentabilidade ao projeto.</li>
       </ul>
       <span class="citation">[Fonte: MILIOLI, 2022.]</span>
     </main>
@@ -570,7 +566,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
             <img src="Festa do Agricultor.png" alt="Festa do Agricultor">
             <figcaption>
               Desfile típico da Festa do Agricultor
-              <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+              <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 69.</span>
             </figcaption>
           </figure>
           <p>Realizada a cada dois anos (geralmente entre julho e agosto), é a maior vitrine da identidade do distrito. A festa celebra a colheita e o trabalho rural com desfiles típicos de tratores e carros alegóricos, café colonial, exposições de máquinas e shows. É um momento de reafirmação da cultura italiana e da força do campo.</p>
@@ -582,7 +578,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
             <img src="Imagem Nossa Senhora de Saúde.png" alt="Imagem de Nossa Senhora da Saúde">
             <figcaption>
               Imagem de Nossa Senhora da Saúde localizada no interior da Igreja Matriz
-              <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+              <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 65.</span>
             </figcaption>
           </figure>
           <p>Celebrada anualmente em novembro (dia 21), homenageia a padroeira da paróquia. A festividade envolve missas solenes e um grandioso almoço tradicional no salão paroquial, servindo a clássica sopa de agnolini, pien, carne e saladas, reunindo centenas de devotos.</p>
@@ -594,7 +590,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
             <img src="Imagem Nossa Senhora de Lourdes.png" alt="Imagem de Nossa Senhora de Lourdes">
             <figcaption>
               Imagem de Nossa Senhora de Lourdes utilizada durante as celebrações
-              <span class="source-ref">Fonte: ANDREOLLA, 2019.</span>
+              <span class="source-ref">Fonte: ANDREOLLA, 2019, p. 67.</span>
             </figcaption>
           </figure>
           <p>Ocorre tradicionalmente em fevereiro ou agosto (mês vocacional). Destaca-se pelas procissões luminosas e, em alguns anos, por encenações teatrais da aparição da santa na gruta, realizadas pela própria comunidade no Seminário dos Josefinos.</p>
@@ -606,7 +602,7 @@ O site foi elaborado como parte do projeto de Atividade Extensionista, buscando 
         <h3>📅 Calendário de Eventos</h3>
         <p style="text-indent: 0;"><center>O calendário completo com as datas dos próximos eventos e celebrações da Paróquia de Fazenda Souza e comunidades (datas e horários poderão ser atualizados, sempre verifique antes com as lideranças da comunidade).</center></p>
         <div style="height: 250px; background-color: #fff; border: 1px solid #ddd; margin: 20px auto; border-radius: 4px;">
-          <p style="text-indent: 0; padding-top: 100px; color: #999;">ESPAÇO RESERVADO PARA O CALENDÁRIO</p>
+          <p style="text-indent: 0; padding-top: 100px; color: #999;"><center>O calendário será atualizado em breve, agradecemos a compreensão!</center></p>
         </div>
       </div>
       <h3 style="text-align: center;">Entre em Contato</h3>
